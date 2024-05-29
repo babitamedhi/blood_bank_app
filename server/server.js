@@ -4,7 +4,8 @@ import mysql from 'mysql'
 import express from 'express'
 import bodyParser from 'body-parser';
 import cors from 'cors'
-
+//new 
+import path from "path";
 
 //controllers
 //user function handlers
@@ -20,10 +21,14 @@ import EmployeeRegisterHandler from './controllers/employee/EmployeeRegisterHand
 import UpdateBlood from './controllers/bloodbank/UpdateStockHandler.js'
 import UpdateHealthHandler from './controllers/bloodbank/UpdateHealthHandler.js';
 import HandleRequestHandler from './controllers/bloodbank/HandleRequestHandler.js';
-
+import DonateClassHandler from './controllers/bloodbank/DonateClassHandler.js';
+import UpdateDonate from './controllers/bloodbank/UpdateDonate.js';
 //dashboard
 import DashboardHandler from './controllers/dashboard/DashboardHandler.js';
 import SearchHandler from './controllers/bloodbank/SearchHandler.js';
+
+
+//new 
 
 //create the app
 var app = express();
@@ -56,6 +61,9 @@ EmployeeRegisterHandler(app, db);
 EmployeeLoginHandler(app, db);
 UpdateHealthHandler(app, db);
 HandleRequestHandler(app, db);
+DonateClassHandler(app, db);
+UpdateDonate(app, db);
+
 
 //bloodbank functionalities
 DashboardHandler(app, db);

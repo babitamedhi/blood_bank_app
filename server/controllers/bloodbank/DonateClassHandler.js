@@ -175,37 +175,64 @@
 // };
 
 // export default RequestClassHandler;
-const RequestClassHandler = (app, db) => {
-  app.post("/request", (req, res) => {
-    const blood_group = req.body.blood_group;
-    const unit = req.body.unit;
-    const user_id = req.body.user_id; // Assuming user_id is provided in the request
+// const DonateClassHandler = (app, db) => {
+//     app.post("/donate", (donate, res) => {
+//       const blood_group = donate.body.blood_group;
+//       //const unit = donate.body.unit;
+//       const user_id = donate.body.user_id; // Assuming user_id is provided in the request
+  
+//       console.log("bloodgroup : " + blood_group);
+  
+//       const sqlSelect = "SELECT * FROM blood_stocks WHERE blood_group = ?";
+//       const sqlInsert = "INSERT INTO user_donate(user_id, blood_group) VALUES (?, ?)";
+  
+//       db.query(sqlSelect, [blood_group], (err, result) => {
+//         if (err) {
+//           console.log("**ERROR**" + err);
+//           return res.status(500).send({ message: "Internal server error" });
+//         }
+  
+//         // if (result.length === 0 || unit > result[0].unit) {
+//         //   return res.status(400).send({ message: "INSUFFICIENT STOCKS!" });
+//         // }
+  
+//         db.query(sqlInsert, [user_id, blood_group], (err, insertResult) => {
+//           if (err) {
+//             console.log("**ERROR ACCEPTING REQUEST!" + err);
+//             return res.status(500).send({ message: "INSUFFICIENT STOCKS!" });
+//           }
+  
+//           res.status(200).send({ message: "REQUEST HAVE BEEN SENT. YOU WILL BE NOTIFIED" });
+//         });
+//       });
+//     });
+//   };
+  
+//   export default DonateClassHandler;
+  
 
-    console.log("bloodgroup : " + blood_group);
 
-    const sqlSelect = "SELECT * FROM blood_stocks WHERE blood_group = ?";
-    const sqlInsert = "INSERT INTO user_request(user_id, blood_group, unit) VALUES (?, ?, ?)";
 
-    db.query(sqlSelect, [blood_group], (err, result) => {
+const DonateClassHandler = (app, db) => {
+  app.post("/donate", (req, res) => {
+    const { blood_group, user_id } = req.body;
+
+    if (!blood_group || !user_id) {
+      return res.status(400).send({ message: "Invalid request data" });
+    }
+
+    const sqlInsert = "INSERT INTO user_donate (user_id, blood_group) VALUES (?, ?)";
+
+    db.query(sqlInsert, [user_id, blood_group], (err, result) => {
       if (err) {
         console.log("**ERROR**" + err);
         return res.status(500).send({ message: "Internal server error" });
       }
 
-      if (result.length === 0 || unit > result[0].unit) {
-        return res.status(400).send({ message: "INSUFFICIENT STOCKS!" });
-      }
-
-      db.query(sqlInsert, [user_id, blood_group, unit], (err, insertResult) => {
-        if (err) {
-          console.log("**ERROR ACCEPTING REQUEST!" + err);
-          return res.status(500).send({ message: "INSUFFICIENT STOCKS!" });
-        }
-
-        res.status(200).send({ message: "REQUEST HAVE BEEN SENT. YOU WILL BE NOTIFIED" });
-      });
+      res.status(200).send({ message: "Donation request has been submitted successfully" });
     });
   });
 };
 
-export default RequestClassHandler;
+export default DonateClassHandler;
+

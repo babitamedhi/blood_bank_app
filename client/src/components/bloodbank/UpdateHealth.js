@@ -99,7 +99,7 @@ const UpdateHealth = () => {
             setuserStatus(e.target.value);
           }}
         />
-        <button onClick={() => updateUserData(userId)}>UPDATE</button>
+        <button className="update-button" onClick={() => updateUserData(userId)}>UPDATE</button>
       </form>
     </div>
   );

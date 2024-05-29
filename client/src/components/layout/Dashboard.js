@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
 
+
+
 //css
 import "../../assets/css/Dashboard.css";
+//import bfImg from '../../assets/img/bg1.png' //updated
 
 //background image
 //import bfImg from '../../assets/img/bg.png'
@@ -23,7 +26,10 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard">
+    //updated here <div className="dashboard-image" style={{ backgroundImage: `url(${bfImg})` }}> 
+    <div className="dashboard"> 
+    
+    
       <h1>BLOOD STOCK</h1>
 
       <table className="blood-table">
@@ -46,7 +52,8 @@ const Dashboard = () => {
       </table>
       {/* <img src={bfImg} alt="bg"/>*/}
       <Footer />
-    </div>
+      </div> 
+    
   );
 };
 

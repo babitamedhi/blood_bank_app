@@ -1,29 +1,33 @@
 .footer {
-  background-color:transparent;
+  background-color: transparent;
+  display: flex;
+  justify-content: center; /* Center the footer content horizontally */
   align-items: center;
-  vertical-align: center;
   width: 100%;
   margin-top: 21em;
-  height: 40px;
+  height: 80px;
   padding-top: 18px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better separation */
 }
+
 .footer a {
-  align-self: flex-end;
-  margin-left: 40px;
-  justify-content: center;
-  color: gray;
-  border: 3px solid red;
-  border-radius: 10px;
-  border-spacing: 1em;
-  margin-top:1em;
-  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content inside the button */
+  margin: 0 20px; /* Adjust spacing around the button */
+  padding: 15px 30px; /* Increase padding for larger button */
+  color: black;
+  border: 1px solid rgb(3, 2, 2);
+  border-radius: 20px; /* Increase border-radius for more rounded corners */
+  font-size: 16px; /* Increase font size */
   text-decoration: none;
   font-family: monospace;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  background-color: rgba(0, 0, 0, 0.1); /* Add slight background color */
 }
-.footer a:hover{
-  color:greenyellow;
+
+.footer a:hover {
+  color: greenyellow;
+  background-color: rgba(0, 0, 0, 0.3); /* Change background color on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
 }
