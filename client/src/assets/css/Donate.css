@@ -60,10 +60,7 @@
 }
 
 
-.donate-container
-{
-  
-}
+
 @media (max-width: 800px) {
   .donate {
     top: 80px; /* Adjust top position for medium screens */

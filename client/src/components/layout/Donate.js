@@ -37,9 +37,7 @@ const Donate = () => {
         <Route path="/login/usr" component={UserLogin} />
         <Route path="/reg/usr" component={UserRegister} />
       </Routes>
-      <div>
-        
-      </div>
+
     
     </div>
   

@@ -21,8 +21,11 @@ import EmployeeRegisterHandler from './controllers/employee/EmployeeRegisterHand
 import UpdateBlood from './controllers/bloodbank/UpdateStockHandler.js'
 import UpdateHealthHandler from './controllers/bloodbank/UpdateHealthHandler.js';
 import HandleRequestHandler from './controllers/bloodbank/HandleRequestHandler.js';
-import DonateClassHandler from './controllers/bloodbank/DonateClassHandler.js';
-import UpdateDonate from './controllers/bloodbank/UpdateDonate.js';
+//import DonateClassHandler from './controllers/bloodbank/DonateController';
+//import UpdateDonate from './controllers/bloodbank/HandleDonateController.js';
+import DonateClassHandler from './controllers/bloodbank/DonateController.js';
+import HandleDonate from './controllers/bloodbank/HandleDonateController.js';
+import DonateRequestControl from './controllers/bloodbank/DonateRequestControl.js'
 //dashboard
 import DashboardHandler from './controllers/dashboard/DashboardHandler.js';
 import SearchHandler from './controllers/bloodbank/SearchHandler.js';
@@ -56,14 +59,18 @@ UserRegisterHandler(app, db);
 UserLoginHandler(app, db);
 RequestClassHandler(app, db);
 
+
+
 //employee functionalities
 EmployeeRegisterHandler(app, db);
 EmployeeLoginHandler(app, db);
 UpdateHealthHandler(app, db);
 HandleRequestHandler(app, db);
+//DonateClassHandler(app, db);
+//UpdateDonate(app, db);
 DonateClassHandler(app, db);
-UpdateDonate(app, db);
-
+HandleDonate(app, db);
+DonateRequestControl(app,db);
 
 //bloodbank functionalities
 DashboardHandler(app, db);

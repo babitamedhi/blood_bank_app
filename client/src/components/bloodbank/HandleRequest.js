@@ -51,6 +51,7 @@ const delUrl = "http://localhost:3001/login/emp/hr/"+req_id;
                 >
                   ACCEPT/SERVE
                 </button>
+                
               </tr>
             );
           })}

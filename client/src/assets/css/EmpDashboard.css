@@ -2,27 +2,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: center;
+  justify-content: center; /* Center button vertically within container */
   margin-top: 1.5em;
-
-
-
+  background-image: url("../img/bg2.png"); /* Set background image */
+  background-size: cover;  /* Scale image to fill container (adjust as needed) */
+  background-position: center; /* Center image within container */
+  min-height: 500px; /* Set minimum height for container (adjust as needed) */
+  /* Optional: Add a background color to ensure content is visible */
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
 }
+
 .emp-dashboard button {
-  margin: 20px;
-  height: 80px;
-  width: 150px;
+  /* Remove fixed width and height, use padding and font size for responsiveness */
+  padding: 15px 30px; /* Adjust padding for desired button size */
+  margin: 10px;
   font-size: 16px;
   font-family: monospace;
   border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
+  border: none; /* Remove border for cleaner look */
+  cursor: pointer; /* Indicate button interactivity */
+  color: rgb(39, 12, 12); /* Text color for readability on background image */
+  /* Consider adding a hover effect if desired */
+  /* transition: background-color 0.2s ease-in-out;  /* Example hover effect */
+  /* on hover { */
+  /*   background-color: #333;  /* Adjust hover color */
+  /* } */
 }
 .emp-dashboard button:hover {
-  text-decoration: none;
-  background-color: black;
-  color: white;
-  outline: none;
+  transform: scale(1.05); /* Scale up slightly on hover */
+  .emp-dashboard button:hover {
+    border-color: #908888; /* Change border color on hover */
+  }
 }

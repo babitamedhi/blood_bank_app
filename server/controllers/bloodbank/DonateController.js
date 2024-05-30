@@ -213,26 +213,48 @@
 
 
 
+// const DonateClassHandler = (app, db) => {
+//   app.post("/donate", (req, res) => {
+//     const { blood_group, user_id } = req.body;
+
+//     if (!blood_group || !user_id) {
+//       return res.status(400).send({ message: "Invalid request data" });
+//     }
+
+//     const sqlInsert = "INSERT INTO user_donate (user_id, blood_group) VALUES (?, ?)";
+
+//     db.query(sqlInsert, [user_id, blood_group], (err, result) => {
+//       if (err) {
+//         console.log("**ERROR**" + err);
+//         return res.status(500).send({ message: "Internal server error" });
+//       }
+
+//       res.status(200).send({ message: "Donation request has been submitted successfully" });
+//     });
+//   });
+// };
+
+// export default DonateClassHandler;
+
+// In DonateClassHandler.js
+import express from 'express';
+const router = express.Router();
+
 const DonateClassHandler = (app, db) => {
-  app.post("/donate", (req, res) => {
-    const { blood_group, user_id } = req.body;
-
-    if (!blood_group || !user_id) {
-      return res.status(400).send({ message: "Invalid request data" });
-    }
-
+  // Handle donation request
+  app.post('/donate', (req, res) => {
+    const { user_id, blood_group } = req.body;
     const sqlInsert = "INSERT INTO user_donate (user_id, blood_group) VALUES (?, ?)";
 
     db.query(sqlInsert, [user_id, blood_group], (err, result) => {
       if (err) {
-        console.log("**ERROR**" + err);
-        return res.status(500).send({ message: "Internal server error" });
+        console.log(err);
+        res.status(500).send({ message: "Error inserting donation request" });
+      } else {
+        res.send({ message: "Donation request submitted successfully" });
       }
-
-      res.status(200).send({ message: "Donation request has been submitted successfully" });
     });
   });
 };
 
 export default DonateClassHandler;
-

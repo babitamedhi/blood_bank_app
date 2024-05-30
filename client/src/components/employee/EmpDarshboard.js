@@ -46,7 +46,7 @@ const EmpDashBoard = () => {
       <a href="/login/emp/hr">
         <button>HANDLE REQUEST</button>
       </a>
-      <a href="/login/emp/dr">
+      <a href="/handle-donate">
         <button>HANDLE DONATION</button>
       </a>
     </div>

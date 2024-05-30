@@ -2,9 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2em;
+  background-image: url('../img/bg2.png'); /* Assuming CSS file is in same directory as UpdateHealth.js */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image tiling */
+  background-size: cover; /* Stretch image to cover the container */
+  min-height: 400px; /* Set a minimum height to ensure image is visible */
 }
+
+
 .search form {
-  padding-top: 5em;
+  padding-top: 2em;
   display: flex;
   align-self: center;
 }
@@ -13,61 +21,66 @@
   margin-bottom: 1em;
   width: 200px;
   height: 30px;
-  border-radius: 30px;
+  border-radius: 5px;
   margin-right: 5px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  outline: none;
-  outline-style: none;
-  outline-width: none;
-  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #e0e8ef; /* Light gray background */
+  color: #333; /* Darker text color for better contrast */
+  transition: all 0.2s ease; /* Smooth transition on hover */
 }
 
-.dashboard {
-  display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-  align-items: center;
+.search input:hover {
+  border-color: #3399ff; /* Blue border on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Slight inner shadow on hover */
 }
 
-.user-table th {
-  font-size: 20px;
-  font-family: monospace;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: rgb(51, 17, 11);
-}
-.user-table td {
-  display: inline;
-  font-size: 20px;
-  font-family: monospace;
-  border: 2px solid black;
-  text-align: center;
+.blood-table {
   margin-top: 2em;
-}
-.user-table td:hover {
-  font-size: 20px;
-  font-family: monospace;
-  border: 2px solid rgb(165, 59, 59);
-  text-align: center;
-  color: rgb(102, 35, 170);
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.updatehealth{
-  display: flex;
+.blood-table th {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  background-color: rgb(185, 24, 24); /* Blue background for headers */
+  color: white; /* White text for headers */
+  border: 1px solid #ccc;
+}
+
+.blood-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.blood-table tr:nth-child(even) {
+  background-color: #f5f5f5; /* Light gray background for alternating rows */
+}
+
+.updatehealth {
+  display: flex; /* Consider using flexbox or grid for better layout */
   flex-direction: column;
-  }
-
-.updatehealth button{
-  width: 10em;
-  height: 30px;
-  justify-self: center;
+  margin-top: 2em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5; /* Light gray background for the form */
 }
 
-.updatehealth input{
-  width: 10em;
+.updatehealth input {
+  margin-bottom: 1em;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #fff; /* White background for inputs */
 }
 .update-button {
   display: inline-flex;

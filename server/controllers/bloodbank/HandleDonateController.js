@@ -153,34 +153,58 @@
 
 
 
-const UpdateDonate = (app, db) => {
-  app.get("/login/emp/dr", (req, res) => {
-    const sqlSelect = "SELECT * FROM user_donate";
+// const UpdateDonate = (app, db) => {
+//   app.get("/login/emp/dr", (req, res) => {
+//     const sqlSelect = "SELECT * FROM user_donate";
 
-    db.query(sqlSelect, (err, result) => {
-      if (err) {
-        console.log("**ERROR**" + err);
-        return res.status(500).send({ message: "Internal server error" });
-      }
+//     db.query(sqlSelect, (err, result) => {
+//       if (err) {
+//         console.log("**ERROR**" + err);
+//         return res.status(500).send({ message: "Internal server error" });
+//       }
 
-      res.send(result);
-    });
-  });
+//       res.send(result);
+//     });
+//   });
 
-  app.delete("/login/emp/dr/:donate_id", (req, res) => {
-    const donate_id = req.params.donate_id;
+//   app.delete("/login/emp/dr/:donate_id", (req, res) => {
+//     const donate_id = req.params.donate_id;
 
+//     const sqlDelete = "DELETE FROM user_donate WHERE donate_id = ?";
+
+//     db.query(sqlDelete, donate_id, (err, result) => {
+//       if (err) {
+//         console.log("**ERROR**" + err);
+//         return res.status(500).send({ message: "Internal server error" });
+//       }
+
+//       res.send({ message: "Donation request served successfully" });
+//     });
+//   });
+// };
+
+// export default UpdateDonate;
+
+
+// In UpdateDonate.js
+import express from 'express';
+const router = express.Router();
+
+const HandleDonate = (app, db) => {
+  // Handle donation acceptance
+  app.delete('/handle-donate/donation/:donate_id', (req, res) => {
+    const { donate_id } = req.params;
     const sqlDelete = "DELETE FROM user_donate WHERE donate_id = ?";
 
-    db.query(sqlDelete, donate_id, (err, result) => {
+    db.query(sqlDelete, [donate_id], (err, result) => {
       if (err) {
-        console.log("**ERROR**" + err);
-        return res.status(500).send({ message: "Internal server error" });
+        console.log(err);
+        res.status(500).send({ message: "Error deleting donation request" });
+      } else {
+        res.send({ message: "Donation request accepted and deleted successfully" });
       }
-
-      res.send({ message: "Donation request served successfully" });
     });
-  });
+   });
 };
 
-export default UpdateDonate;
+export default HandleDonate;
