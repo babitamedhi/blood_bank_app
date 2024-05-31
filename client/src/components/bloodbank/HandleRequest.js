@@ -28,6 +28,17 @@ const delUrl = "http://localhost:3001/login/emp/hr/"+req_id;
       }
     });
   };
+  const rejectRequest = (req_id) => {
+    //console.log(`request id : ${req_id}`);
+    Axios.delete("http://localhost:3001/login/emp/hr/reject/"+req_id).then((response) => {
+      if (response.data.message) {
+        alert(response.data.message);
+        setRequestTable(RequestTable.filter(request => request.req_id !== req_id));
+      }
+    }).catch((error) => {
+      alert("Error in rejecting request");
+    });
+  };
   return (
     <div className="handle-request">
       <h1>REQUEST TABLE</h1>
@@ -50,6 +61,13 @@ const delUrl = "http://localhost:3001/login/emp/hr/"+req_id;
                   }}
                 >
                   ACCEPT/SERVE
+                </button>
+                <button
+                  onClick={() => {
+                    rejectRequest(request.req_id);
+                  }}
+                >
+                  REJECT
                 </button>
                 
               </tr>

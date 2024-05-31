@@ -1,7 +1,7 @@
 .user-dash {
     display: flex;
     flex-direction: column;
-    padding-top: 10em;
+    padding-top: 100px;
     height: 100vh; /* Ensures the background covers the entire viewport height */
     width: 100vw; /* Ensures the background covers the entire viewport width */
     background-image: none; /* Remove the inherited background image */
@@ -38,7 +38,7 @@
 }
 
 .user-dash button:hover {
-    background-color: black;
+    background-color: rgb(93, 17, 17);
     color: white;
     outline: none;
 }

@@ -42,6 +42,7 @@ function App() {
         <Route exact path="/home/search/blood" element={<Search />} />
         <Route exact path="/request" element={<RequestClass />} />
         <Route exact path="/login/emp/hr" element={<HandleRequest />} />
+        <Route exact path="/login/emp/hr/reject" element={<HandleRequest />} />
         {/* <Route exact path="/login/usr/dash/req" element={Request}/> */}
         <Route exact path="/handle-donate" element={<HandleDonate />} /> {/* New route for HandleDonate */}
         <Route exact path="/handle-donate/donate" element={<HandleDonate />} /> {/* New route for HandleDonate */}

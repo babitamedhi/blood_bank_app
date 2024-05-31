@@ -4,12 +4,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center ;
   padding-top: 7rem;
+  background-color: #da8f8f; /* Light gray background */
+  background-image: url('../img/bg2.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ensures full viewport height */
+  
 }
 
 .request form {
   display: flex;
   flex-direction: column
+  
  
 }
 

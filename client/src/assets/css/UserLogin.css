@@ -4,6 +4,8 @@
     align-items: center;
     /* margin-top:167px; */
     margin-top:60px;
+    background-image: url('../img/bg2.png');
+  
 }
 .user-login h2{
     font-size: 40px;

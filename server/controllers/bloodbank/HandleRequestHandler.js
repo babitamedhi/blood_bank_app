@@ -65,6 +65,21 @@ const HandleRequestHandler = (app, db) => {
       }
     });
   });
+
+ // New endpoint for rejecting requests
+ app.delete("/login/emp/hr/reject/:req_id", (req, res) => {
+  const req_id = req.params.req_id;
+  const sqlDelete = "DELETE FROM user_request WHERE req_id = ?";
+  
+  db.query(sqlDelete, [req_id], (err, result) => {
+    if (err) {
+      console.log("**ERROR**" + err);
+      res.status(500).send({ message: "Error rejecting request" });
+    } else {
+      res.send({ message: "REQUEST REJECTED!" });
+    }
+  });
+});
 };
 
 export default HandleRequestHandler;
