@@ -31,10 +31,10 @@ The app incorporates the following features for two categories of users:
 ### General
 - Search based on blood group or location
 
-## Deployment
+<!-- ## Deployment
 
 Click [here](https://lonebots.github.io/blood-bank-app/) for the live demo (Note: Some functionalities may be unavailable since it's statically hosted).  
-Watch the detailed explanation about the app [here](https://youtu.be/LRvpY_4qsOk).
+Watch the detailed explanation about the app [here](https://youtu.be/LRvpY_4qsOk). -->
 
 ## Screenshots
 
@@ -50,4 +50,4 @@ To run the project locally:
 
 ### 1. Clone the Project
 ```bash
-git clone https://github.com/lonebots/blood-bank-app.git
+git clone https://github.com/babitamedhi/blood_bank_app.git
