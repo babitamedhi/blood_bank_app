@@ -1,0 +1,44 @@
+.user-dash {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    height: 100vh; /* Ensures the background covers the entire viewport height */
+    width: 100vw; /* Ensures the background covers the entire viewport width */
+    background-image: none; /* Remove the inherited background image */
+    position: relative;
+}
+
+.user-dash::after {
+    content: "";
+    background-image: url('../../assets/img/bg2.png'); /* Adjust the path as necessary */
+    background-size: 100%; /* Adjust the size as necessary */
+    background-position: center; /* Positions the image at the top right corner */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1200px; /* Same as background-size width */
+    height: 500px; /* Same as background-size height */
+    z-index: -1;
+}
+
+.user-dash button {
+    margin: 1em;
+    height: 90px;
+    width: 240px;
+    align-self: center;
+    font-family: monospace;
+    font-size: 25px;
+    border-radius: 90px;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    -ms-border-radius: 90px;
+    -o-border-radius: 90px;
+    outline: none;
+}
+
+.user-dash button:hover {
+    background-color: rgb(93, 17, 17);
+    color: white;
+    outline: none;
+}

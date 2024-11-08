@@ -1,0 +1,66 @@
+/* Container for the request section */
+.handle-request {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6em;
+    font-size: 25px;
+    background-image: url("../img/bg2.png"); /* Assuming bg2.png is in the specified path */
+    background-size: cover; /* Stretch image to cover the entire container */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent image repetition */
+  }
+  
+  /* Table headers */
+  .req-table th {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 20px; /* Adjusted font size for better readability */
+    color: rgb(71, 44, 44); /* Assuming text color stands out from the background image */
+  }
+  
+  /* Table data cells */
+  .req-table td {
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid black;
+    height: 35px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(108, 28, 28); /* Assuming text color stands out from the background image */
+  }
+  
+  /* Buttons within the table */
+  .req-table button {
+    height: 48px;
+    margin-left: 1em;
+    background-color: #428bca; /* Blue button color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .req-table button:hover {
+    background-color: #337ab7; /* Darker shade on hover */
+  }
+  
+  /* Responsive design for smaller screens (adjust as needed) */
+  @media (max-width: 768px) {
+    .handle-request {
+      font-size: 20px; /* Adjust font size for smaller screens */
+    }
+    .req-table th,
+    .req-table td {
+      font-size: 18px; /* Adjust font size for table elements */
+      padding: 8px 10px; /* Adjust padding for smaller font size */
+    }
+    .req-table button {
+      font-size: 14px; /* Adjust font size for buttons */
+      padding: 3px 8px; /* Adjust padding for smaller size */
+    }
+  }
+  
